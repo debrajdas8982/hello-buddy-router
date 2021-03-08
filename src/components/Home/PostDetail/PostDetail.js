@@ -12,14 +12,14 @@ const url = `https://jsonplaceholder.typicode.com/posts/${id}`;
 fetch(url)
 .then(Response=>Response.json())
 .then(data=> setPost(data))
-}, []);
+}, [id]);
 
 useEffect(()=>{
 const url = `https://jsonplaceholder.typicode.com/comments?postId=${id}`;
 fetch(url)
 .then(Response=>Response.json())
 .then(data=> setComments(data))
-}, [])
+}, [id])
     return (
         <div>
            <h3>This is post detail: {id}</h3> 
